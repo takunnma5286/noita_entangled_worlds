@@ -1425,14 +1425,14 @@ impl App {
                     );
                     ui.add_space(15.0);
                     ui.horizontal(|ui| {
-                        if ui.button("save colors").clicked() {
+                        if ui.button(tr("save_colors")).clicked() {
                             let desc = self
                                 .appearance
                                 .create_png_desc(self.modmanager_settings.game_save_path.clone());
                             netman.new_desc(desc, self.player_image.clone());
                             *netman.new_desc.lock().unwrap() = Some(desc);
                         };
-                        ui.label("requires noita restart")
+                        ui.label(tr("requires_restart")))
                     });
                     ui.add_space(15.0);
                     if accept_local && !local_connected {
